@@ -6,6 +6,7 @@
   "scripts": {
     "build:ui": "rm -rf build && cd /home/niko42/Desktop/100devs/fso-sub/part2/2_exercises/2_11 && npm run build && cp -r build /home/niko42/Desktop/100devs/3_files/3_exercises/3_1",
     "deploy": "/home/niko42/.fly/bin/flyctl deploy",
+    "lint": "eslint .",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
@@ -19,6 +20,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "eslint": "^8.27.0",
     "nodemon": "^2.0.20"
   }
 }
