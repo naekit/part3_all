@@ -1,0 +1,24 @@
+{
+  "name": "3_1ex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:ui": "rm -rf build && cd /home/niko42/Desktop/100devs/fso-sub/part2/2_exercises/2_11 && npm run build && cp -r build /home/niko42/Desktop/100devs/3_files/3_exercises/3_1",
+    "deploy": "/home/niko42/.fly/bin/flyctl deploy",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
