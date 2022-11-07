@@ -5,6 +5,15 @@ const url = process.env.MONGODB_URI
 
 console.log('connecting to', url)
 
+function numberValidator(val) {
+    const valArr = val.split('-')
+    if(valArr.length > 2 || valArr[0].length < 2){
+        return false
+    } else {
+        return true
+    }
+}
+
 mongoose.connect(url)
     .then(res => {
         console.log('connected to MongoDB')
@@ -14,8 +23,16 @@ mongoose.connect(url)
     })
 
 const phoneSchema = new mongoose.Schema({
-    name: String,
-    number: String,
+    name: {
+        type: String,
+        minLength: 3,
+        required: true
+    },
+    number: {
+        type: String,
+        minLength: 8,
+        validate: numberValidator
+    },
     date: Date,
 })
 
